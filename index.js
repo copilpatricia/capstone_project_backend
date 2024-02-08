@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true})) // allow data in url string
 
 
 app.get('/', (req, res) => {
-    res.send('backend...')
+    res.send('backend test...')
 })
 
 app.listen(PORT, () => {
