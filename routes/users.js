@@ -15,6 +15,17 @@ router.get('/', async(req, res) => {
     }
 })
 
+router.get('/:id', async(req, res) => {
+    try {
+        const {id} = req.params
+        const user = await Users.findById(id)
+        if(!user) return res.status(404).json({msg: "User not found!"});
+        else res.json(user)
+    } catch (error) {
+        console.log(error);
+    }
+})
+
 // POST route - creates a new user
 
 router.post('/', async(req, res) => {
@@ -30,15 +41,13 @@ router.post('/', async(req, res) => {
 
 router.put('/:id', async(req, res) => {
     try {
-        const {id} = req.paramas;
+        const {id} = req.params;
         const {body} = req;
-
+        
         if (body.password) {
             delete body.password;
-            console.log('Password removed from body');
           }
       
-
         const updatedUser = await Users.findByIdAndUpdate(id, body, {new: true});
         res.json(updatedUser)
     } catch (error) {
@@ -50,7 +59,7 @@ router.put('/:id', async(req, res) => {
 
 router.delete('/:id', async(req, res) => {
     try {
-        const {id} = req.paramas;
+        const {id} = req.params;
         const deletedUser = await Users.findByIdAndDelete(id);
         res.json({msg: "User deleted", deletedUser})
     } catch (error) {
