@@ -1,9 +1,5 @@
 import mongoose from "mongoose";
-const ingredient = new mongoose.Schema({
-  ingredient: {
-    type: String,
-  },
-});
+
 const recipesSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -16,10 +12,14 @@ const recipesSchema = new mongoose.Schema({
   },
 
   ingredients: {
-    type: String,
+    type: Array,
+    default: [],
   },
 
-  instructions: String,
+  instructions: {
+    type: Array,
+    default: []
+  }
 });
 
 export default mongoose.model("Recipes", recipesSchema);
