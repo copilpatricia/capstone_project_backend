@@ -1,5 +1,6 @@
 import {Router} from 'express';
-import Users from '../models/users.js'
+import Users from '../models/users.js';
+import bcrypt from 'bcrypt';
 
 const router = new Router();
 
@@ -62,6 +63,47 @@ router.delete('/:id', async(req, res) => {
         const {id} = req.params;
         const deletedUser = await Users.findByIdAndDelete(id);
         res.json({msg: "User deleted", deletedUser})
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+//POST ROUTE - for the signup form
+
+router.post('/signup', async(req, res) => {
+    try {
+        console.log(req.body)
+        const {email, password} = req.body;
+        const user = await Users.findOne({email});
+        if(user) {
+            return res.status(401).json({msg: "User already exist!"})
+        }
+
+        const createUser = await Users.create(req.body)
+        res.status(203).json(createUser)
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+// POST ROUTE - for the singin form
+
+router.post('/signin', async(req, res) => {
+    try {
+        console.log(req.body)
+        const {email, password} = req.body
+        const user = await Users.findOne({email});
+
+        if(!user) {
+            return res.status(401).json({msg: "Invalid data!"})
+        }
+        
+        const passwordMatched = await bcrypt.compare(password, user.password);
+
+        if (!passwordMatched) {
+            return res.status(401).json({msg: "Invalid password"})
+          }
+        res.json(user)
     } catch (error) {
         console.log(error)
     }
