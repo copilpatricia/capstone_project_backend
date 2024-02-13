@@ -20,6 +20,8 @@ const usersSchema = new mongoose.Schema({
     timestamps: true
 })
 
+usersSchema.index({email: 1})
+
 // hide the password using bcrypt 
 usersSchema.pre('save', async function(next){
     // if the password has not change continue
