@@ -2,13 +2,12 @@ import mongoose from "mongoose";
 
 const reviewsSchema = new mongoose.Schema({
     user_id: {
-        type: mongoose.Schema.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         ref: "Users",
         required: true
     },
     username: {
         type: String,
-        
 
     },
     review: {

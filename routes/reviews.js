@@ -18,13 +18,14 @@ router.get('/', async(req, res) => {
 
 // GET /:id router - return a single review
 
-router.get(':/id', async(req, res) => {
+router.get('/:id', async(req, res) => {
     try {
         const{id} = req.params;
         const review = await Reviews.findById(id);
         if(!review) return res.status(404).json({msg: "Review not found!"})
     } catch (error) {
         console.log(error);
+        
     }
 });
 
@@ -33,7 +34,8 @@ router.get(':/id', async(req, res) => {
 router.post('/', async(req, res) => {
     try {
         const reviews = await Reviews.create(req.body);
-        res.status(203).json(reviews)
+        console.log(reviews)
+        res.status(201).json(reviews)
     } catch(error) {
         console.log(error);
     }

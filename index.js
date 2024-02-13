@@ -25,7 +25,7 @@ app.use('/api/reviews', reviewsRouter)
 
 
 app.get('/', (req, res) => {
-    res.send('backend test...')
+    res.send('Welcome to the API...')
 })
 
 app.listen(PORT, () => {
