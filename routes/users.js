@@ -1,5 +1,6 @@
 import {Router} from 'express';
 import Users from '../models/users.js';
+import Reviews from '../models/reviews.js';
 import bcrypt from 'bcrypt';
 
 const router = new Router();
@@ -8,13 +9,15 @@ const router = new Router();
 
 router.get('/', async(req, res) => {
     try {
-        const users = await Users.find({});
+        const users = await Users.find({}).populate({path: "user_id"});
         if(!users) return res.status(404).json({msg: "User not found!"});
         else res.json(users);
     } catch (error) {
         console.log(error)
     }
 })
+
+// GET/:id router - returns a single user
 
 router.get('/:id', async(req, res) => {
     try {
@@ -31,8 +34,15 @@ router.get('/:id', async(req, res) => {
 
 router.post('/', async(req, res) => {
     try {
-        const users = await Users.create(req.body)
-        res.status(203).json(users)
+        const users = await Users.create(req.body);
+        const review = await Reviews.create({
+            user_id: users._id,
+            username: users.username,
+            review: req.body.review
+        
+        });
+
+        res.status(203).json({users, review})
     } catch (error) {
         console.log(error)
     }

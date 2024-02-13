@@ -4,6 +4,12 @@ import bcrypt from 'bcrypt';
 const SALT_ROUNDS = 8;
 
 const usersSchema = new mongoose.Schema({
+    username: {
+        type: String,
+        minLength: 3,
+        maxLength: 20
+    },
+
     email: {
         type: String,
         required: true,

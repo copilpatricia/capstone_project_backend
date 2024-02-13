@@ -7,6 +7,7 @@ import cors from 'cors';
 
 import recipesRouter from './routes/recipes.js'
 import usersRouter from './routes/users.js'
+import reviewsRouter from './routes/reviews.js'
 
 const app = express()
 const PORT = process.env.PORT || 4000;
@@ -20,6 +21,7 @@ app.use(express.urlencoded({extended: true})) // allow data in url string
 //routes
 app.use('/api/recipes', recipesRouter);
 app.use('/api/users', usersRouter)
+app.use('/api/reviews', reviewsRouter)
 
 
 app.get('/', (req, res) => {
