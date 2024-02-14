@@ -105,4 +105,4 @@ Link to the frontend repo: https://github.com/copilpatricia/capstone_project_fro
 
 Successfully deployed the backend here: https://blog-app-backend-nrpv.onrender.com
 
-Successfully deployed the frontend here:
+Successfully deployed the frontend here: https://app.netlify.com/sites/coruscating-hamster-e9dfd0/overview
