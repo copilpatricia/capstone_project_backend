@@ -1,15 +1,29 @@
 
 # Blog Application - Final Project
 
+![This is a preview of the Main Page](../backend/assets/images/preview.png)
+
+
 ## Description
 
-Taste of joy is a food blog application, so that users can get inspiration for their daily meals.
+Taste the joy is a full-stack project that combines the power of MongoDB, Express, React and Node.js to deliver a user-friendly experience.
 
-The application is build with Mongoose, ExpressJS, React and NodeJs.
+This SPA ensures a smooth user experience, making it easy to explore the variety of recipes and user reviews.
+
+Users can not only browse recipes but also contribute to the community by adding their own reviews, and sharing insights with the other users.
+
+Behind the scenes, I have used MongoDB and Mongoose to create an efficient way to store and manipulate the data, making the entire application responsive.
+
+The application is a full CRUD system for recipes, reviews and user users profile.
+
+I used the React library to render the Navbar component and Footer component, and also to create different views for the application. To navigate without refreshing pages I utilized React Router framework. To manage the state of the application I used the useState hook.
+
+In order to provide an efficient way to share the user-related state across various components in application I used the useContext hook.
+
 
 ## Getting Started
 
-Would you like to see the content of the page? Please use the following credentials to log in: email: user1, password: password1) or create an account using the Sign up button. Click this link to get access to the page: [Link]("").
+Would you like to see the content of the page? Please use the following credentials to log in:( email: user1, password: password1) or create an account using the Sign Up button. Click this link to get access to the page: [Link]("").
 
 # Backend Configuration
 
@@ -83,14 +97,24 @@ The blog application is going to have more features in the future.
 
 * [Mongoose Documentation]("https://mongoosejs.com/docs/")
 
-* [Stackoverflow]("https://stackoverflow.com/questions/37669391/how-to-get-rid-of-underline-for-link-component-of-react-router")
+* [Inspirational food blog]("https://pinchofyum.com/about)
+
+* Stackoverflow :
+
+1.  https://stackoverflow.com/questions/37669391/how-to-get-rid-of-underline-for-link-component-of-react-router
+
+2. https://stackoverflow.com/questions/18001478/referencing-another-schema-in-mongoose
 
 
+
+## Other links
 
 
 Link to the frontend repo:  https://github.com/copilpatricia/capstone_project_frontend
 
-Link to the backend deployed website: https://blog-app-backend-nrpv.onrender.com
+Successfully deployed the backend here: https://blog-app-backend-nrpv.onrender.com
+
+Successfully deployed the frontend here: 
 
 
 
