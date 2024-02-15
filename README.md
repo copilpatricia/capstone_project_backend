@@ -85,13 +85,15 @@ The blog application is going to have more features in the future.
 
 ## Resources
 
-- [Trello website]("https://trello.com/b/V2Mymh3I/capstone-project-blog-app")
+- [Trello website](https://trello.com/b/V2Mymh3I/capstone-project-blog-app)
 
-- [Draw.io]("https://app.diagrams.net/")
+- [Draw.io](https://app.diagrams.net/)
 
-- [Mongoose Documentation]("https://mongoosejs.com/docs/")
+- [Mongoose Documentation](https://mongoosejs.com/docs/)
 
-- [Inspirational food blog]("https://pinchofyum.com/about)
+- [Inspirational food blog](https://pinchofyum.com/about)
+
+- [Game of Thrones API](https://api.gameofthronesquotes.xyz/v1/random)
 
 - Stackoverflow :
 
