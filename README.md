@@ -20,7 +20,7 @@ In order to provide an efficient way to share the user-related state across vari
 
 ## Getting Started
 
-Would you like to see the content of the page? Please use the following credentials to log in:( email: user1, password: password1) or create an account using the Sign Up button. Click this link to get access to the page: .
+Would you like to see the content of the page? Please use the following credentials to log in:( email: user1, password: password1) or create an account using the Sign Up button. Click this link to get access to the page: https://coruscating-hamster-e9dfd0.netlify.app/ .
 
 # Backend Configuration
 
